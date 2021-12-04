@@ -1,0 +1,17 @@
+
+    file = open("links.txt", "r")
+    lines = file.readlines()
+
+    print(lines[1].find(')'))
+    print(lines[1][1:lines[1].find(')')])
+
+    new_lines = []
+    for i in range(len(lines)):
+        if 'github.com' in lines[i]:
+            new_lines.append(lines[i][0:lines[i].find(')')])
+    # print('/n'.join(ew_lines[1:10]))
+
+    f = open("new_links", "w")
+    f.write('\n'.join(new_lines))
+    f.close()
+    print(len(lines))
